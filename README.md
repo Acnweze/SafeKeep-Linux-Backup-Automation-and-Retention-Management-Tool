@@ -2,13 +2,13 @@
 
 ## Linux Backup Automation and Retention Management Tool
 
-![Linux](https://img.shields.io/badge/Linux-Bash-orange)
-![Automation](https://img.shields.io/badge/Automation-Cron-blue)
-![Shell Script](https://img.shields.io/badge/Scripting-Bash-green)
+**A Bash-based Linux automation utility for scheduled backups, retention management, and operational logging.**
 
-## Overview
+---
 
-**SafeKeep** is a Bash-based Linux automation tool designed to simplify server backup operations through automated file backups, retention management, logging, and scheduled execution using Cron.
+# Overview
+
+SafeKeep is a Bash-based Linux automation tool designed to simplify server backup operations through automated file backups, retention management, logging, and scheduled execution using Cron.
 
 The project simulates a real-world Linux system administration scenario where an operations team needs a lightweight solution to protect important files, remove outdated backups, and maintain records of automated tasks.
 
@@ -38,7 +38,7 @@ SafeKeep creates timestamped backups of important files and directories.
 
 Example:
 
-```
+```bash
 backup_20260708_223005
 ```
 
@@ -50,9 +50,9 @@ Each backup contains a copy of the protected data.
 
 To prevent unlimited storage usage, SafeKeep automatically removes backups older than the configured retention period.
 
-Configured through:
+Configuration:
 
-```
+```bash
 RETENTION_DAYS=7
 ```
 
@@ -68,7 +68,7 @@ SafeKeep records important operations including:
 
 Example:
 
-```
+```text
 2026-07-08 22:30:05 - Backup created: /home/codespace/safekeep/backups/backup_20260708_223005
 ```
 
@@ -76,15 +76,15 @@ Example:
 
 ## Cron Scheduling
 
-SafeKeep can run automatically using Linux Cron.
+SafeKeep runs automatically using Linux Cron.
 
 Current schedule:
 
-```
+```bash
 0 2 * * * /home/codespace/safekeep/scripts/safekeep.sh >> /home/codespace/safekeep/logs/cron.log 2>&1
 ```
 
-This runs SafeKeep every day at 2:00 AM.
+This executes SafeKeep every day at 2:00 AM.
 
 ---
 
@@ -100,7 +100,7 @@ This runs SafeKeep every day at 2:00 AM.
 
 # Project Structure
 
-```
+```text
 safekeep/
 │
 ├── backups/
@@ -129,27 +129,27 @@ safekeep/
 
 # How It Works
 
-The SafeKeep workflow:
+SafeKeep workflow:
 
-```
+```text
 Source Files
-     |
-     ↓
+      |
+      ↓
 Load Configuration
-     |
-     ↓
+      |
+      ↓
 Validate Directories
-     |
-     ↓
+      |
+      ↓
 Create Backup
-     |
-     ↓
+      |
+      ↓
 Apply Retention Policy
-     |
-     ↓
+      |
+      ↓
 Write Logs
-     |
-     ↓
+      |
+      ↓
 Scheduled Execution Through Cron
 ```
 
@@ -157,7 +157,7 @@ Scheduled Execution Through Cron
 
 # Installation & Usage
 
-## Clone the Repository
+## Clone Repository
 
 ```bash
 git clone <repository-url>
@@ -187,7 +187,7 @@ chmod +x scripts/safekeep.sh
 
 Example output:
 
-```
+```text
 Starting SafeKeep
 Backup completed successfully
 Checking old backups...
@@ -201,7 +201,7 @@ SafeKeep completed
 
 SafeKeep settings are stored in:
 
-```
+```text
 config/safekeep.conf
 ```
 
@@ -216,6 +216,32 @@ RETENTION_DAYS=7
 ```
 
 The configuration file allows backup locations and retention settings to be changed without modifying the main script.
+
+---
+
+# Testing & Verification
+
+SafeKeep was tested by:
+
+* Running manual backup execution
+* Verifying generated backup directories
+* Confirming copied files
+* Checking operational logs
+* Installing and validating Cron scheduling
+
+Verification commands:
+
+```bash
+ls -l backups
+```
+
+```bash
+cat logs/safekeep.log
+```
+
+```bash
+crontab -l
+```
 
 ---
 
@@ -262,4 +288,5 @@ Linux Automation | Cloud Infrastructure | Azure Enthusiast
  Completed
 
 SafeKeep demonstrates how Linux administration tasks can be automated using Bash scripting and Cron.
+
 
