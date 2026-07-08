@@ -259,7 +259,7 @@ Linux Automation | Cloud Infrastructure | Azure Enthusiast
 
 # Project Status
 
-✅ Completed
+ Completed
 
 SafeKeep demonstrates how Linux administration tasks can be automated using Bash scripting and Cron.
 
