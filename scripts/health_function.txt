@@ -1,0 +1,63 @@
+# ==========================================
+# System Health Report Function
+# ==========================================
+
+generate_health_report()
+{
+
+echo "Generating system health report..."
+
+
+{
+echo "=============================="
+echo "SafeKeep Health Report"
+echo "=============================="
+
+echo ""
+
+echo "Generated:"
+date
+
+echo ""
+
+echo "Hostname:"
+hostname
+
+echo ""
+
+echo "Current User:"
+whoami
+
+echo ""
+
+echo "System Uptime:"
+uptime
+
+echo ""
+
+echo "Disk Usage:"
+df -h
+
+echo ""
+
+echo "Memory Usage:"
+free -h
+
+echo ""
+
+echo "Backup Storage Usage:"
+du -sh "$BACKUP_DIR"
+
+} > "$HEALTH_REPORT"
+
+
+if [ $? -eq 0 ]
+then
+    echo "Health report generated successfully"
+    log_message "Health report generated: $HEALTH_REPORT"
+else
+    echo "Health report generation failed"
+    log_message "ERROR: Health report failed"
+fi
+
+}
