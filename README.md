@@ -244,7 +244,21 @@ crontab -l
 ```
 
 ---
+## Screenshots
 
+### SafeKeep Execution
+![SafeKeep Execution](screenshots/01-safekeep-execution.png)
+
+### Backup Contents
+![Backup Contents](screenshots/02-backup-contents.png)
+
+### Activity Logs
+![Activity Logs](screenshots/03-activity-logs.png)
+
+### Cron Schedule
+![Cron Schedule](screenshots/04-cron-schedule.png)
+
+---
 # Skills Demonstrated
 
 This project demonstrates practical Linux administration and automation skills:
