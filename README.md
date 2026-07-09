@@ -248,20 +248,16 @@ crontab -l
 ## Screenshots
 
 ### SafeKeep Execution
-
-![SafeKeep Execution](safekeep-execution.png)
+![SafeKeep Execution](screenshots/safekeep-execution.png)
 
 ### Backup Contents
-
-![Backup Contents](backup-contents.png)
+![Backup Contents](screenshots/backup-contents.png)
 
 ### Activity Logs
-
-![Activity Logs](backup%20activity-logs.png)
+![Activity Logs](screenshots/backup%20activity-logs.png)
 
 ### Cron Schedule
-
-![Cron Schedule](cron-schedule.png)
+![Cron Schedule](screenshots/cron-schedule.png)
 
 ---
 # Skills Demonstrated
